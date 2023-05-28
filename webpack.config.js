@@ -45,6 +45,20 @@ module.exports = {
         generator: {
           filename: "[name]_[hash:8][ext]"
         }
+      },
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader:"babel-loader",
+            // options:{
+            //   plugins:[
+            //     "@babel/plugin-transform-arrow-functions",
+            //     '@babel/plugin-transform-block-scoping'
+            //   ]
+            // }
+          }
+        ]
       }
     ]
   },

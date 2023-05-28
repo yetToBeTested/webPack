@@ -16,7 +16,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_div_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/div_style.css */ \"./app/css/div_style.css\");\n/* harmony import */ var _css_title_style_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/title_style.less */ \"./app/css/title_style.less\");\n/* harmony import */ var _css_bg_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/bg_style.css */ \"./app/css/bg_style.css\");\n/* harmony import */ var _img_body_bg03_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/body_bg03.png */ \"./app/img/body_bg03.png\");\n\r\n\r\n\r\n\r\n\r\n\r\nconst divE1 = document.createElement(\"div\")\r\ndivE1.textContent = \"Hello World\"\r\ndivE1.classList.add(\"content\")\r\ndocument.body.append(divE1)\r\n\r\nconst titleE1 = document.createElement(\"div\")\r\ntitleE1.textContent = \"Hello less\"\r\ntitleE1.classList.add(\"title\")\r\ndocument.body.append(titleE1)\r\n\r\nconst imgE1 = document.createElement(\"img\")\r\nimgE1.src = _img_body_bg03_png__WEBPACK_IMPORTED_MODULE_3__\r\ndocument.body.append(imgE1)\r\n\r\nconst divBgE1 = document.createElement(\"div\")\r\ndivBgE1.classList.add(\"img-bg\")\r\ndocument.body.append(divBgE1)\n\n//# sourceURL=webpack://webpack/./app/component/cpns.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_div_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/div_style.css */ \"./app/css/div_style.css\");\n/* harmony import */ var _css_title_style_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/title_style.less */ \"./app/css/title_style.less\");\n/* harmony import */ var _css_bg_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/bg_style.css */ \"./app/css/bg_style.css\");\n/* harmony import */ var _img_body_bg03_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/body_bg03.png */ \"./app/img/body_bg03.png\");\n\n\n\n\nvar divE1 = document.createElement(\"div\");\ndivE1.textContent = \"Hello World\";\ndivE1.classList.add(\"content\");\ndocument.body.append(divE1);\nvar titleE1 = document.createElement(\"div\");\ntitleE1.textContent = \"Hello less\";\ntitleE1.classList.add(\"title\");\ndocument.body.append(titleE1);\nvar imgE1 = document.createElement(\"img\");\nimgE1.src = _img_body_bg03_png__WEBPACK_IMPORTED_MODULE_3__;\ndocument.body.append(imgE1);\nvar divBgE1 = document.createElement(\"div\");\ndivBgE1.classList.add(\"img-bg\");\ndocument.body.append(divBgE1);\n\n//# sourceURL=webpack://webpack/./app/component/cpns.js?");
 
 /***/ }),
 
@@ -27,7 +27,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _component_cpns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component/cpns */ \"./app/component/cpns.js\");\nvar sum = __webpack_require__(/*! ./sum */ \"./app/sum.js\")\r\n;\r\nconsole.log(sum(23, 22))\n\n//# sourceURL=webpack://webpack/./app/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _component_cpns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component/cpns */ \"./app/component/cpns.js\");\nvar sum = __webpack_require__(/*! ./sum */ \"./app/sum.js\");\n\nvar message = 'hello webpack';\nconsole.log(sum(23, message.length));\nconsole.log(message);\nvar bar = function bar() {\n  console.log('aaa');\n};\nbar();\nbar();\n\n//# sourceURL=webpack://webpack/./app/index.js?");
 
 /***/ }),
 
@@ -37,7 +37,40 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
   \********************/
 /***/ ((module) => {
 
-eval("// sum.js\r\n// 这个模块化写法是 node 环境独有的，浏览器原生不支持使用\r\nmodule.exports = function(a, b) {\r\n    return a + b\r\n}\r\n// // index.js\r\n// var sum = require('./sum')\r\n// console.log(sum(1, 2))\r\n\r\n\n\n//# sourceURL=webpack://webpack/./app/sum.js?");
+eval("// sum.js\n// 这个模块化写法是 node 环境独有的，浏览器原生不支持使用\nmodule.exports = function (a, b) {\n  return a + b;\n};\n// // index.js\n// var sum = require('./sum')\n// console.log(sum(1, 2))\n\n//# sourceURL=webpack://webpack/./app/sum.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+"use strict";
+eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\nmodule.exports = function (cssWithMappingToString) {\n  var list = [];\n\n  // return the list of modules as css string\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = \"\";\n      var needLayer = typeof item[5] !== \"undefined\";\n      if (item[4]) {\n        content += \"@supports (\".concat(item[4], \") {\");\n      }\n      if (item[2]) {\n        content += \"@media \".concat(item[2], \" {\");\n      }\n      if (needLayer) {\n        content += \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\");\n      }\n      content += cssWithMappingToString(item);\n      if (needLayer) {\n        content += \"}\";\n      }\n      if (item[2]) {\n        content += \"}\";\n      }\n      if (item[4]) {\n        content += \"}\";\n      }\n      return content;\n    }).join(\"\");\n  };\n\n  // import a list of modules into the list\n  list.i = function i(modules, media, dedupe, supports, layer) {\n    if (typeof modules === \"string\") {\n      modules = [[null, modules, undefined]];\n    }\n    var alreadyImportedModules = {};\n    if (dedupe) {\n      for (var k = 0; k < this.length; k++) {\n        var id = this[k][0];\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n    for (var _k = 0; _k < modules.length; _k++) {\n      var item = [].concat(modules[_k]);\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        continue;\n      }\n      if (typeof layer !== \"undefined\") {\n        if (typeof item[5] === \"undefined\") {\n          item[5] = layer;\n        } else {\n          item[1] = \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\").concat(item[1], \"}\");\n          item[5] = layer;\n        }\n      }\n      if (media) {\n        if (!item[2]) {\n          item[2] = media;\n        } else {\n          item[1] = \"@media \".concat(item[2], \" {\").concat(item[1], \"}\");\n          item[2] = media;\n        }\n      }\n      if (supports) {\n        if (!item[4]) {\n          item[4] = \"\".concat(supports);\n        } else {\n          item[1] = \"@supports (\".concat(item[4], \") {\").concat(item[1], \"}\");\n          item[4] = supports;\n        }\n      }\n      list.push(item);\n    }\n  };\n  return list;\n};\n\n//# sourceURL=webpack://webpack/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    options = {};\n  }\n  if (!url) {\n    return url;\n  }\n  url = String(url.__esModule ? url[\"default\"] : url);\n\n  // If url is already wrapped in quotes, remove them\n  if (/^['\"].*['\"]$/.test(url)) {\n    url = url.slice(1, -1);\n  }\n  if (options.hash) {\n    url += options.hash;\n  }\n\n  // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n  if (/[\"'() \\t\\n]|(%20)/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, \"\\\\n\"), \"\\\"\");\n  }\n  return url;\n};\n\n//# sourceURL=webpack://webpack/./node_modules/css-loader/dist/runtime/getUrl.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/noSourceMaps.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
+  \**************************************************************/
+/***/ ((module) => {
+
+"use strict";
+eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=webpack://webpack/./node_modules/css-loader/dist/runtime/noSourceMaps.js?");
 
 /***/ }),
 
@@ -71,39 +104,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \".content {\\r\\n    font-size: 20px;\\r\\n    color: red;\\r\\n    -webkit-user-select: none;\\r\\n       -moz-user-select: none;\\r\\n            user-select: none;\\r\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpack/./app/css/div_style.css?./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
-/***/ ((module) => {
-
-"use strict";
-eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\nmodule.exports = function (cssWithMappingToString) {\n  var list = [];\n\n  // return the list of modules as css string\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = \"\";\n      var needLayer = typeof item[5] !== \"undefined\";\n      if (item[4]) {\n        content += \"@supports (\".concat(item[4], \") {\");\n      }\n      if (item[2]) {\n        content += \"@media \".concat(item[2], \" {\");\n      }\n      if (needLayer) {\n        content += \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\");\n      }\n      content += cssWithMappingToString(item);\n      if (needLayer) {\n        content += \"}\";\n      }\n      if (item[2]) {\n        content += \"}\";\n      }\n      if (item[4]) {\n        content += \"}\";\n      }\n      return content;\n    }).join(\"\");\n  };\n\n  // import a list of modules into the list\n  list.i = function i(modules, media, dedupe, supports, layer) {\n    if (typeof modules === \"string\") {\n      modules = [[null, modules, undefined]];\n    }\n    var alreadyImportedModules = {};\n    if (dedupe) {\n      for (var k = 0; k < this.length; k++) {\n        var id = this[k][0];\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n    for (var _k = 0; _k < modules.length; _k++) {\n      var item = [].concat(modules[_k]);\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        continue;\n      }\n      if (typeof layer !== \"undefined\") {\n        if (typeof item[5] === \"undefined\") {\n          item[5] = layer;\n        } else {\n          item[1] = \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\").concat(item[1], \"}\");\n          item[5] = layer;\n        }\n      }\n      if (media) {\n        if (!item[2]) {\n          item[2] = media;\n        } else {\n          item[1] = \"@media \".concat(item[2], \" {\").concat(item[1], \"}\");\n          item[2] = media;\n        }\n      }\n      if (supports) {\n        if (!item[4]) {\n          item[4] = \"\".concat(supports);\n        } else {\n          item[1] = \"@supports (\".concat(item[4], \") {\").concat(item[1], \"}\");\n          item[4] = supports;\n        }\n      }\n      list.push(item);\n    }\n  };\n  return list;\n};\n\n//# sourceURL=webpack://webpack/./node_modules/css-loader/dist/runtime/api.js?");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-"use strict";
-eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    options = {};\n  }\n  if (!url) {\n    return url;\n  }\n  url = String(url.__esModule ? url.default : url);\n\n  // If url is already wrapped in quotes, remove them\n  if (/^['\"].*['\"]$/.test(url)) {\n    url = url.slice(1, -1);\n  }\n  if (options.hash) {\n    url += options.hash;\n  }\n\n  // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n  if (/[\"'() \\t\\n]|(%20)/.test(url) || options.needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, \"\\\\n\"), \"\\\"\");\n  }\n  return url;\n};\n\n//# sourceURL=webpack://webpack/./node_modules/css-loader/dist/runtime/getUrl.js?");
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/noSourceMaps.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
-  \**************************************************************/
-/***/ ((module) => {
-
-"use strict";
-eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=webpack://webpack/./node_modules/css-loader/dist/runtime/noSourceMaps.js?");
 
 /***/ }),
 
