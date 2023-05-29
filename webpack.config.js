@@ -1,10 +1,21 @@
 // 自带的库
 const path = require('path')
+const {VueLoaderPlugin} = require("vue-loader/dist/index")
+const {CleanWebpackPlugin} = require("clean-webpack-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {DefinePlugin} = require('webpack')
+
 module.exports = {
   entry: './app/index.js',
   output: {
       path: path.resolve(__dirname, 'build'), // 必须使用绝对地址，输出文件夹
       filename: "bundle.js" // 打包后输出文件的文件名
+  },
+  resolve:{
+    extensions: [".js", ".json", ".vue", ".jsx", ".ts", ".tsx"],
+    alias: {
+      
+    }
   },
   module:{
     rules:[
@@ -59,8 +70,26 @@ module.exports = {
             // }
           }
         ]
+      },
+      {
+        test: /\.vue$/,
+        use:[
+          {loader:'vue-loader'}
+        ]
       }
     ]
   },
+  plugins:[
+    new VueLoaderPlugin(),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title:'ddd',
+      template: "./index.html"
+    }),
+    new DefinePlugin({
+      notry:'666',
+      test:'9999'
+    })
+  ],
   mode: 'development',
 };

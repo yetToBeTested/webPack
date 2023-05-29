@@ -1,13 +1,22 @@
+import { createApp } from "vue/dist/vue.esm-bundler"
 var sum = require('./sum')
-import "./component/cpns"
-const message = 'hello webpack'
-console.log(sum(23, message.length))
+// import "./component/cpns"
 
-console.log(message);
+import hello from './vue-demo/hello'
 
-const bar =() => {
-    console.log('aaa');
-}
+// const message = 'hello webpack'
+// console.log(sum(23, message.length))
 
-bar()
-bar()
+// console.log(message);
+
+// const bar =() => {
+//     console.log('aaa');
+// }
+
+// bar()
+// bar()
+
+createApp(hello).mount('#app')
+
+console.log(notry);
+console.log(test);
