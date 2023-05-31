@@ -14,7 +14,7 @@
 export default {
     data() {
         return {
-            title: "我是vue标题"
+            title: "我是vue标题tttttt"
         }
     }
 }

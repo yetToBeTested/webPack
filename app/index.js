@@ -4,8 +4,8 @@ var sum = require('./sum')
 
 import hello from './vue-demo/hello'
 
-// const message = 'hello webpack'
-// console.log(sum(23, message.length))
+const message = 'hello webpack'
+console.log(sum(23, message.length))
 
 // console.log(message);
 
